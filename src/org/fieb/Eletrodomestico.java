@@ -8,15 +8,13 @@ public abstract class Eletrodomestico {
     protected double preco;
     protected double voltagem;
 
-    public Eletrodomestico(double p,double v,String m) {
+    public Eletrodomestico(double p,String m) {
         this.preco = p;
-        this.voltagem = v;
         this.marca = m;
     }
 
-    public Eletrodomestico(String m,double v) {
+    public Eletrodomestico(String m) {
         this.marca = m;
-        this.voltagem = v;
     }
 
     public void setMarca(String m){

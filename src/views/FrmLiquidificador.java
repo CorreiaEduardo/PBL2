@@ -16,6 +16,7 @@ public class FrmLiquidificador extends javax.swing.JFrame {
      * Creates new form FrmBatedeira
      */
     public FrmLiquidificador(int level) {
+       // lblCalc.setText("<html><body>with<br>linebreak</body></html>");
         initComponents();
         this.level = level;
     }
@@ -36,10 +37,12 @@ public class FrmLiquidificador extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        btnDesconto = new javax.swing.JLabel();
+        btnCadastrar = new javax.swing.JLabel();
+        lblDesconto = new javax.swing.JLabel();
+        lblCalc = new javax.swing.JLabel();
+        btnCalc = new javax.swing.JLabel();
+        lblCadastrar1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(959, 496));
@@ -81,7 +84,7 @@ public class FrmLiquidificador extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(894, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
@@ -101,7 +104,7 @@ public class FrmLiquidificador extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("FERRO DE PASSAR ROUPA");
+        jLabel7.setText("LIQUIDIFICADOR");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_Back_26px.png"))); // NOI18N
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -118,7 +121,7 @@ public class FrmLiquidificador extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addGap(207, 207, 207)
+                .addGap(305, 305, 305)
                 .addComponent(jLabel7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -132,33 +135,52 @@ public class FrmLiquidificador extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/percentgreen.png"))); // NOI18N
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnDesconto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/percentgreen.png"))); // NOI18N
+        btnDesconto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDesconto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                btnDescontoMouseClicked(evt);
             }
         });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/plusgreen.png"))); // NOI18N
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/plusgreen.png"))); // NOI18N
+        btnCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                btnCadastrarMouseClicked(evt);
             }
         });
 
-        jLabel4.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel4.setText("CALCULAR DESCONTO");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblDesconto.setBackground(new java.awt.Color(204, 204, 204));
+        lblDesconto.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblDesconto.setForeground(new java.awt.Color(204, 204, 204));
+        lblDesconto.setText("CALCULAR DESCONTO");
+        lblDesconto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel8.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel8.setText("CADASTRAR");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCalc.setBackground(new java.awt.Color(204, 204, 204));
+        lblCalc.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblCalc.setForeground(new java.awt.Color(204, 204, 204));
+        lblCalc.setText("CALCULAR LB/S");
+        lblCalc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        btnCalc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mediagreen.png"))); // NOI18N
+        btnCalc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCalc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCalcMouseClicked(evt);
+            }
+        });
+
+        lblCadastrar1.setBackground(new java.awt.Color(204, 204, 204));
+        lblCadastrar1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblCadastrar1.setForeground(new java.awt.Color(204, 204, 204));
+        lblCadastrar1.setText("CADASTRAR");
+        lblCadastrar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCadastrar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCadastrar1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -166,18 +188,24 @@ public class FrmLiquidificador extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(btnCadastrar)
+                        .addGap(151, 151, 151)
+                        .addComponent(btnDesconto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCalc)
+                        .addGap(5, 5, 5))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jLabel8))
-                    .addComponent(jLabel6))
-                .addGap(164, 164, 164)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(157, 157, 157))
+                        .addGap(63, 63, 63)
+                        .addComponent(lblCadastrar1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                        .addComponent(lblDesconto)
+                        .addGap(97, 97, 97)
+                        .addComponent(lblCalc)))
+                .addGap(51, 51, 51))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,16 +214,16 @@ public class FrmLiquidificador extends javax.swing.JFrame {
                 .addGap(1, 1, 1)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel8)))
-                .addGap(0, 118, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btnCadastrar)
+                    .addComponent(btnDesconto)
+                    .addComponent(btnCalc))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCalc)
+                    .addComponent(lblDesconto)
+                    .addComponent(lblCadastrar1))
+                .addGap(42, 107, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -239,60 +267,107 @@ public class FrmLiquidificador extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        if (level == 1) { // Fabrica
+    private void btnCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarMouseClicked
+        if (this.level == 1) {
             JTextField marca = new JTextField();
             JTextField volt = new JTextField();
-            JTextField qntHelices = new JTextField();
+            JTextField qnt = new JTextField();
+            JTextField cap = new JTextField();
+            JTextField preco = new JTextField();
             Object[] message = {
                 "Marca:", marca,
-                "Voltagem:", volt
+                "Voltagem:", volt,
+                "Quantidade(L):",qnt,
+                "Capacidade(L/s):",cap,
+                "Preço(Opcional):",preco
             };
 
             int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - LIQUIDIFICADOR", JOptionPane.OK_CANCEL_OPTION);
             if (option == JOptionPane.OK_OPTION) {
-                novoLiquidificador = new Liquidificador(Double.parseDouble(volt.getText()),marca.getText());
+                if ((marca.getText().isEmpty() || volt.getText().isEmpty() || qnt.getText().isEmpty() || cap.getText().isEmpty())) {
+                    JOptionPane.showMessageDialog(null, "Todos os campos obrigatórios devem ser preenchidos.");
+                    return;
+                }else{
+                    novoLiquidificador = new Liquidificador(marca.getText());
+                    novoLiquidificador.setCapacidade(Double.parseDouble(cap.getText()));
+                    novoLiquidificador.setQuantidade(Double.parseDouble(qnt.getText()));
+                    if (!(preco.getText().isEmpty())) {
+                        novoLiquidificador.setPreco(Double.parseDouble(preco.getText()));
+                    }
+                    if (!(novoLiquidificador.setVoltagem(Double.parseDouble(volt.getText())))) {
+                        JOptionPane.showMessageDialog(null, "Valor de voltagem invalida, tente novamente", "Operação cancelada", 2);
+                    }
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
             }
-        }else if(level == 2){ // Loja
+            
+        } else {
             JTextField marca = new JTextField();
             JTextField preco = new JTextField();
             JTextField volt = new JTextField();
-            JTextField qntHelices = new JTextField();
+            JTextField qnt = new JTextField();
+            JTextField cap = new JTextField();
             Object[] message = {
                 "Marca:", marca,
                 "Preço:", preco,
-                "Voltagem:", volt
+                "Voltagem:", volt,
+                "Quantidade(L):",qnt,
+                "Capacidade(L/s):",cap
             };
 
             int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - LIQUIDIFICADOR", JOptionPane.OK_CANCEL_OPTION);
             if (option == JOptionPane.OK_OPTION) {
-                novoLiquidificador = new Liquidificador(Double.parseDouble(preco.getText()),Double.parseDouble(volt.getText()),marca.getText());
-            } else {
+                if ((marca.getText().isEmpty() || volt.getText().isEmpty() || qnt.getText().isEmpty() || cap.getText().isEmpty() || preco.getText().isEmpty())) {
+                    JOptionPane.showMessageDialog(null, "Todos os campos obrigatórios devem ser preenchidos.");
+                    return;
+                }else{
+                    novoLiquidificador = new Liquidificador(Double.parseDouble(preco.getText()),marca.getText());
+                    novoLiquidificador.setCapacidade(Double.parseDouble(cap.getText()));
+                    novoLiquidificador.setQuantidade(Double.parseDouble(qnt.getText()));
+                    if (!(novoLiquidificador.setVoltagem(Double.parseDouble(volt.getText())))) {
+                        JOptionPane.showMessageDialog(null, "Valor de voltagem invalida, tente novamente", "Operação cancelada", 2);
+                        novoLiquidificador = null;
+                    }
+                }
+            }else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
             }
         }
-    }//GEN-LAST:event_jLabel6MouseClicked
+        
+    }//GEN-LAST:event_btnCadastrarMouseClicked
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-
-        try {
+    private void btnDescontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDescontoMouseClicked
+        if (novoLiquidificador == null) {
+            JOptionPane.showMessageDialog(null, "Você deve cadastrar um liquidificador primeiro.", "Operação cancelada", 2);
+        }
+        else if(novoLiquidificador.getPreco() == 0){
+                JOptionPane.showMessageDialog(null, "Esse produto é de uso interno e não possui valor de venda.");
+        }else{
             String mes = JOptionPane.showInputDialog(null, "Insira o mês corrente", "CALCULANDO DESCONTO", 3);
             double desconto = novoLiquidificador.calculoDesconto(mes);
-            if (desconto != 1) {
+            if (desconto != 1 && novoLiquidificador.getPreco() !=0) {
                 JOptionPane.showMessageDialog(null, "O desconto a ser aplicado no valor desse produto é "+desconto+" totalizando um preço de R$ "+(novoLiquidificador.getPreco()-novoLiquidificador.calculoDesconto(mes)));
-            }else{
+            }
+            else{
                 JOptionPane.showMessageDialog(null, "Sem promoções neste produto no mês corrente", "Desconto calculado.", 2);
             }
-
-        } catch (Exception ex) {
-            if (novoLiquidificador.getMarca().equals("")) {
-                JOptionPane.showMessageDialog(null, "Você deve cadastrar uma batedeira primeiro.", "Operação cancelada", 2);
-                throw ex;
-            }
         }
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_btnDescontoMouseClicked
+
+    private void btnCalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalcMouseClicked
+        try {
+            JOptionPane.showMessageDialog(null, "A média de litros batidos por segundo desse liquidificador é " + novoLiquidificador.calculaLitrosPorSegundo());
+        } catch (Exception ex) {
+                if (novoLiquidificador == null) {
+                    JOptionPane.showMessageDialog(null, "Você deve cadastrar um liquidificador primeiro.", "Operação cancelada", 2);
+                }
+        }
+    }//GEN-LAST:event_btnCalcMouseClicked
+
+    private void lblCadastrar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastrar1MouseClicked
+        btnCadastrarMouseClicked(evt);
+    }//GEN-LAST:event_lblCadastrar1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -330,16 +405,18 @@ public class FrmLiquidificador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnCadastrar;
+    private javax.swing.JLabel btnCalc;
+    private javax.swing.JLabel btnDesconto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblCadastrar1;
+    private javax.swing.JLabel lblCalc;
+    private javax.swing.JLabel lblDesconto;
     // End of variables declaration//GEN-END:variables
 }

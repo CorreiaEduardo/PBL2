@@ -3,18 +3,18 @@ package org.fieb;
 /**
  * @author Eduardo C.
  */
-public class Batedeira extends Eletrodomestico {
+public class Batedeira extends Eletrodomestico implements Helicoidal{
     
     private int quantidadeHelices;
     private double litrosPorSegundo;
     private double quantidade;
     private double capacidade;
-    public Batedeira(double p, double v, String m) {
-        super(p, v, m);
+    public Batedeira(double p, String m) {
+        super(p, m);
     }
     
-    public Batedeira(double v, String m) {
-            super(m, v);
+    public Batedeira(String m) {
+            super(m);
     }
 
     @Override
@@ -25,6 +25,11 @@ public class Batedeira extends Eletrodomestico {
         else {
             return 1;
         }
+    }
+    
+    @Override
+    public double calculaLitrosPorSegundo(){
+       return this.litrosPorSegundo = this.quantidade/(this.capacidade*this.getQuantidadeHelices());
     }
 
     public int getQuantidadeHelices() {

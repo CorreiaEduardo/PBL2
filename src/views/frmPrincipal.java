@@ -1,11 +1,5 @@
 package views;
 
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import org.fieb.Batedeira;
-import org.fieb.FerroDePassar;
-import org.fieb.Liquidificador;
-
 /**
  *
  * @author Eduardo C.
@@ -29,13 +23,13 @@ public class frmPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblBatedeira = new javax.swing.JLabel();
+        lblLiquidificador = new javax.swing.JLabel();
+        lblFerro = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        btnFerro = new javax.swing.JLabel();
+        btnLiquidificador = new javax.swing.JLabel();
+        btnBatedeira = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -93,59 +87,59 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel7.setText("BATEDEIRA");
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblBatedeira.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblBatedeira.setForeground(new java.awt.Color(204, 204, 204));
+        lblBatedeira.setText("BATEDEIRA");
+        lblBatedeira.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBatedeira.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
+                lblBatedeiraMouseClicked(evt);
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel8.setText("LIQUIDIFICADOR");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblLiquidificador.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblLiquidificador.setForeground(new java.awt.Color(204, 204, 204));
+        lblLiquidificador.setText("LIQUIDIFICADOR");
+        lblLiquidificador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblLiquidificador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                lblLiquidificadorMouseClicked(evt);
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel9.setText("FERRO");
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblFerro.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblFerro.setForeground(new java.awt.Color(204, 204, 204));
+        lblFerro.setText("FERRO");
+        lblFerro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFerro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
+                lblFerroMouseClicked(evt);
             }
         });
 
         jPanel3.setBackground(new java.awt.Color(75, 75, 75));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/test2.png"))); // NOI18N
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnFerro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/test2.png"))); // NOI18N
+        btnFerro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFerro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                btnFerroMouseClicked(evt);
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/test3.png"))); // NOI18N
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnLiquidificador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/test3.png"))); // NOI18N
+        btnLiquidificador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLiquidificador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                btnLiquidificadorMouseClicked(evt);
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tes3.png"))); // NOI18N
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnBatedeira.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tes3.png"))); // NOI18N
+        btnBatedeira.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBatedeira.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                btnBatedeiraMouseClicked(evt);
             }
         });
 
@@ -155,11 +149,11 @@ public class frmPrincipal extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(jLabel4)
+                .addComponent(btnBatedeira)
                 .addGap(104, 104, 104)
-                .addComponent(jLabel3)
+                .addComponent(btnFerro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                .addComponent(jLabel5)
+                .addComponent(btnLiquidificador)
                 .addGap(69, 69, 69))
         );
         jPanel3Layout.setVerticalGroup(
@@ -167,9 +161,9 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5))
+                    .addComponent(btnBatedeira)
+                    .addComponent(btnFerro)
+                    .addComponent(btnLiquidificador))
                 .addContainerGap())
         );
 
@@ -180,11 +174,11 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 951, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(89, 89, 89)
-                .addComponent(jLabel7)
+                .addComponent(lblBatedeira)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9)
+                .addComponent(lblFerro)
                 .addGap(172, 172, 172)
-                .addComponent(jLabel8)
+                .addComponent(lblLiquidificador)
                 .addGap(72, 72, 72))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -196,9 +190,9 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8))
+                    .addComponent(lblBatedeira)
+                    .addComponent(lblFerro)
+                    .addComponent(lblLiquidificador))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
 
@@ -232,164 +226,50 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        System.exit(0);
+        frmLogin telaSair = new frmLogin();
+        telaSair.pack();
+        telaSair.setLocationRelativeTo(null);
+        this.setVisible(false);
+        telaSair.setVisible(true);
+        
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        if (level == 2) {
-            FrmBatedeira telaBatedeira = new FrmBatedeira(level);
-            telaBatedeira.pack();
-            telaBatedeira.setLocationRelativeTo(null);
-            this.setVisible(false);
-            telaBatedeira.setVisible(true);
-        }else{
-            Batedeira novaBatedeira;
-            JTextField marca = new JTextField();
-            JTextField volt = new JTextField();
-            JTextField qntHelices = new JTextField();
-            Object[] message = {
-                "Marca:", marca,
-                "Voltagem:", volt,
-                "Quantidade de hélices:", qntHelices
-            };
+    private void btnBatedeiraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBatedeiraMouseClicked
+        FrmBatedeira telaBatedeira = new FrmBatedeira(level);
+        telaBatedeira.pack();
+        telaBatedeira.setLocationRelativeTo(null);
+        this.setVisible(false);
+        telaBatedeira.setVisible(true);
+    }//GEN-LAST:event_btnBatedeiraMouseClicked
 
-            int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - BATEDEIRA", JOptionPane.OK_CANCEL_OPTION);
-            if (option == JOptionPane.OK_OPTION) {
-                novaBatedeira = new Batedeira(Double.parseDouble(volt.getText()),marca.getText());
-            } else {
-                JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
-            }
-        }
-    }//GEN-LAST:event_jLabel4MouseClicked
+    private void lblBatedeiraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBatedeiraMouseClicked
+        btnBatedeiraMouseClicked(evt);
+    }//GEN-LAST:event_lblBatedeiraMouseClicked
 
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        if (level == 2) {
-            FrmBatedeira telaBatedeira = new FrmBatedeira(level);
-            telaBatedeira.pack();
-            telaBatedeira.setLocationRelativeTo(null);
-            this.setVisible(false);
-            telaBatedeira.setVisible(true);
-        }else{
-            Batedeira novaBatedeira;
-            JTextField marca = new JTextField();
-            JTextField volt = new JTextField();
-            JTextField qntHelices = new JTextField();
-            Object[] message = {
-                "Marca:", marca,
-                "Voltagem:", volt,
-                "Quantidade de hélices:", qntHelices
-            };
-
-            int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - BATEDEIRA", JOptionPane.OK_CANCEL_OPTION);
-            if (option == JOptionPane.OK_OPTION) {
-                novaBatedeira = new Batedeira(Double.parseDouble(volt.getText()),marca.getText());
-            } else {
-                JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
-            }
-        }
-    }//GEN-LAST:event_jLabel7MouseClicked
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        if (level == 2) {
+    private void btnFerroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFerroMouseClicked
             FrmFerro telaFerro = new FrmFerro(level);
             telaFerro.pack();
             telaFerro.setLocationRelativeTo(null);
             this.setVisible(false);
             telaFerro.setVisible(true);
-        }else{
-            FerroDePassar novoFerro;
-            JTextField marca = new JTextField();
-            JTextField volt = new JTextField();
-            JTextField qntHelices = new JTextField();
-            Object[] message = {
-                "Marca:", marca,
-                "Voltagem:", volt
-            };
+        
+    }//GEN-LAST:event_btnFerroMouseClicked
 
-            int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - FERRO DE PASSAR", JOptionPane.OK_CANCEL_OPTION);
-            if (option == JOptionPane.OK_OPTION) {
-                novoFerro = new FerroDePassar(Double.parseDouble(volt.getText()),marca.getText());
-            } else {
-                JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
-            }
-        }
-    }//GEN-LAST:event_jLabel3MouseClicked
+    private void lblFerroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFerroMouseClicked
+        btnFerroMouseClicked(evt);
+    }//GEN-LAST:event_lblFerroMouseClicked
 
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        if (level == 2) {
-            FrmFerro telaFerro = new FrmFerro(level);
-            telaFerro.pack();
-            telaFerro.setLocationRelativeTo(null);
-            this.setVisible(false);
-            telaFerro.setVisible(true);
-        }else{
-            FerroDePassar novoFerro;
-            JTextField marca = new JTextField();
-            JTextField volt = new JTextField();
-            JTextField qntHelices = new JTextField();
-            Object[] message = {
-                "Marca:", marca,
-                "Voltagem:", volt
-            };
+    private void btnLiquidificadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLiquidificadorMouseClicked
+        FrmLiquidificador telaLiquidificador = new FrmLiquidificador(level);
+        telaLiquidificador.pack();
+        telaLiquidificador.setLocationRelativeTo(null);
+        this.setVisible(false);
+        telaLiquidificador.setVisible(true);
+    }//GEN-LAST:event_btnLiquidificadorMouseClicked
 
-            int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - FERRO DE PASSAR", JOptionPane.OK_CANCEL_OPTION);
-            if (option == JOptionPane.OK_OPTION) {
-                novoFerro = new FerroDePassar(Double.parseDouble(volt.getText()),marca.getText());
-            } else {
-                JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
-            }
-        }        
-    }//GEN-LAST:event_jLabel9MouseClicked
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        if (level == 2) {
-            FrmLiquidificador telaLiquidificador = new FrmLiquidificador(level);
-            telaLiquidificador.pack();
-            telaLiquidificador.setLocationRelativeTo(null);
-            this.setVisible(false);
-            telaLiquidificador.setVisible(true);
-        }else{
-            Liquidificador novoLiquidificador;
-            JTextField marca = new JTextField();
-            JTextField volt = new JTextField();
-            Object[] message = {
-                "Marca:", marca,
-                "Voltagem:", volt
-            };
-
-            int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - FERRO DE PASSAR", JOptionPane.OK_CANCEL_OPTION);
-            if (option == JOptionPane.OK_OPTION) {
-                novoLiquidificador = new Liquidificador(Double.parseDouble(volt.getText()),marca.getText());
-            } else {
-                JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
-            }
-        } 
-    }//GEN-LAST:event_jLabel5MouseClicked
-
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        if (level == 2) {
-            FrmLiquidificador telaLiquidificador = new FrmLiquidificador(level);
-            telaLiquidificador.pack();
-            telaLiquidificador.setLocationRelativeTo(null);
-            this.setVisible(false);
-            telaLiquidificador.setVisible(true);
-        }else{
-            Liquidificador novoLiquidificador;
-            JTextField marca = new JTextField();
-            JTextField volt = new JTextField();
-            Object[] message = {
-                "Marca:", marca,
-                "Voltagem:", volt
-            };
-
-            int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - FERRO DE PASSAR", JOptionPane.OK_CANCEL_OPTION);
-            if (option == JOptionPane.OK_OPTION) {
-                novoLiquidificador = new Liquidificador(Double.parseDouble(volt.getText()),marca.getText());
-            } else {
-                JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
-            }
-        } 
-    }//GEN-LAST:event_jLabel8MouseClicked
+    private void lblLiquidificadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLiquidificadorMouseClicked
+        btnLiquidificadorMouseClicked(evt);
+    }//GEN-LAST:event_lblLiquidificadorMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -427,16 +307,16 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnBatedeira;
+    private javax.swing.JLabel btnFerro;
+    private javax.swing.JLabel btnLiquidificador;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblBatedeira;
+    private javax.swing.JLabel lblFerro;
+    private javax.swing.JLabel lblLiquidificador;
     // End of variables declaration//GEN-END:variables
 }

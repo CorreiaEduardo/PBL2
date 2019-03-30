@@ -1,0 +1,22 @@
+1 ‐ Crie um sistema que controle a venda direto da fábrica ou da loja de Eletrodoméstico que
+pode vender: 
+- Liquidificador, Batedeira ou Ferro de passar. 
+- Todos vão ter: marca, preço e voltagem. - OK
+- Será obrigado para cadastrar um novo eletrodoméstico já possuir um preço, voltagem
+e marca ou apenas marca e voltagem (para a fábrica utilizar). - OK
+
+- A classe Liquidificador terá também um atributo tampa, que por sua vez possuirá: Cor e Descrição. - OK
+
+- Já a batedeira terá uma quantidade de hélices. - OK
+
+- E todos terão um cálculo de desconto. Porém o desconto será feito de acordo com o mês. 
+    Se estiver no mês de maio (mães) o ferro fica em promoção de 15%. Se tiver no mês de Agosto (pais) é dado um desconto de 10% no liquidificador 
+    e no mês de dezembro é o mês de dar 20% de desconto na batedeira. - OK
+
+- Além disso, a atribuição da voltagem do eletrodoméstico se dará através da validação se é 110 ou 220, mas se ele for um ferro, a
+verificação será também válida se for 5 volts, pois existe um modelo carregado por USB.
+
+- O liquidificador e a batedeira terão quantidade média de litros que podem ser batidos por
+segundo. 
+    Será calculado pela formula: quantidade(L)/Capacidade(L/S). 
+    Caso se tenha mais de uma hélice na batedeira a será multiplicado a quantidade de hélices pela capacidade.

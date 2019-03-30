@@ -3,30 +3,30 @@ package org.fieb;
 /**
  * @author Eduardo C.
  */
-public class Liquidificador extends Eletrodomestico{
+public class Liquidificador extends Eletrodomestico implements Helicoidal{
     private Tampa tampa;
     private double litrosPorSegundo;
     private double quantidade;
     private double capacidade;
-    public Liquidificador(double p, double v, String m) {
-            super(p, v, m);
+    public Liquidificador(double p, String m) {
+            super(p, m);
             tampa = new Tampa();
     }
-    public Liquidificador(double v, String m) {
-            super(m, v);
+    public Liquidificador(String m) {
+            super(m);
             tampa = new Tampa();
     }
     @Override
     public double calculoDesconto(String mes){
         if (mes.equalsIgnoreCase("Agosto")) {
-                this.preco -= this.preco*0.10;
-                return this.getPreco()*0.10;
+            return this.getPreco()*0.10;
         }
         else {
-                return 1;
+            return 1;
         }
     }
     
+    @Override
     public double calculaLitrosPorSegundo(){
        return this.litrosPorSegundo = this.quantidade/this.capacidade;
     }

@@ -11,12 +11,12 @@ package org.fieb;
  */
 public class FerroDePassar extends Eletrodomestico{
 
-    public FerroDePassar(double p, double v, String m) {
-        super(p, v, m);
+    public FerroDePassar(double p, String m) {
+        super(p, m);
     }
 
-        public FerroDePassar(double v, String m) {
-            super(m, v);
+        public FerroDePassar(String m) {
+            super(m);
     }
     
     @Override

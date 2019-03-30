@@ -34,10 +34,12 @@ public class FrmBatedeira extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        btnDesconto = new javax.swing.JLabel();
+        btnCadastrar = new javax.swing.JLabel();
+        lblDesconto = new javax.swing.JLabel();
+        lblCadastrar = new javax.swing.JLabel();
+        btnCalc = new javax.swing.JLabel();
+        lblCalc = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(959, 496));
@@ -130,33 +132,62 @@ public class FrmBatedeira extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/percentcircle.png"))); // NOI18N
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnDesconto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/percentcircle.png"))); // NOI18N
+        btnDesconto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDesconto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                btnDescontoMouseClicked(evt);
             }
         });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pluscircle.png"))); // NOI18N
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pluscircle.png"))); // NOI18N
+        btnCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                btnCadastrarMouseClicked(evt);
             }
         });
 
-        jLabel4.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel4.setText("CALCULAR DESCONTO");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblDesconto.setBackground(new java.awt.Color(204, 204, 204));
+        lblDesconto.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblDesconto.setForeground(new java.awt.Color(204, 204, 204));
+        lblDesconto.setText("CALCULAR DESCONTO");
+        lblDesconto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblDesconto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblDescontoMouseClicked(evt);
+            }
+        });
 
-        jLabel8.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel8.setText("CADASTRAR");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCadastrar.setBackground(new java.awt.Color(204, 204, 204));
+        lblCadastrar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblCadastrar.setForeground(new java.awt.Color(204, 204, 204));
+        lblCadastrar.setText("CADASTRAR");
+        lblCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCadastrarMouseClicked(evt);
+            }
+        });
+
+        btnCalc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MEDIACIRCLE.png"))); // NOI18N
+        btnCalc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCalc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCalcMouseClicked(evt);
+            }
+        });
+
+        lblCalc.setBackground(new java.awt.Color(204, 204, 204));
+        lblCalc.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblCalc.setForeground(new java.awt.Color(204, 204, 204));
+        lblCalc.setText("CALCULAR LB/S");
+        lblCalc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCalc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCalcMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -165,17 +196,24 @@ public class FrmBatedeira extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(64, 64, 64)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jLabel8))
-                    .addComponent(jLabel6))
-                .addGap(164, 164, 164)
+                        .addComponent(lblCadastrar))
+                    .addComponent(btnCadastrar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(157, 157, 157))
+                    .addComponent(lblDesconto)
+                    .addComponent(btnDesconto))
+                .addGap(78, 78, 78)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(btnCalc)
+                        .addGap(5, 5, 5))
+                    .addComponent(lblCalc))
+                .addGap(62, 62, 62))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,16 +221,20 @@ public class FrmBatedeira extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
+                        .addComponent(btnDesconto)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel8)))
+                        .addComponent(lblDesconto))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnCadastrar)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblCadastrar))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnCalc)
+                        .addGap(29, 29, 29)
+                        .addComponent(lblCalc)))
                 .addGap(0, 118, Short.MAX_VALUE))
         );
 
@@ -237,62 +279,114 @@ public class FrmBatedeira extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        if (level == 1) { // Fabrica
+    private void btnCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarMouseClicked
+        if (this.level == 1) {
             JTextField marca = new JTextField();
             JTextField volt = new JTextField();
-            JTextField qntHelices = new JTextField();
+            JTextField qnt = new JTextField();
+            JTextField cap = new JTextField();
+            JTextField preco = new JTextField();
             Object[] message = {
                 "Marca:", marca,
                 "Voltagem:", volt,
-                "Quantidade de hélices:", qntHelices
+                "Quantidade(L):",qnt,
+                "Capacidade(L/s):",cap,
+                "Preço(Opcional):",preco
             };
 
             int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - BATEDEIRA", JOptionPane.OK_CANCEL_OPTION);
             if (option == JOptionPane.OK_OPTION) {
-                novaBatedeira = new Batedeira(Double.parseDouble(volt.getText()),marca.getText());
+                if ((marca.getText().isEmpty() || volt.getText().isEmpty() || qnt.getText().isEmpty() || cap.getText().isEmpty())) {
+                    JOptionPane.showMessageDialog(null, "Todos os campos obrigatórios devem ser preenchidos.");
+                    return;
+                }else{
+                    novaBatedeira = new Batedeira(marca.getText());
+                    novaBatedeira.setCapacidade(Double.parseDouble(cap.getText()));
+                    novaBatedeira.setQuantidade(Double.parseDouble(qnt.getText()));
+                    if (!(preco.getText().isEmpty())) {
+                        novaBatedeira.setPreco(Double.parseDouble(preco.getText()));
+                    }
+                    if (!(novaBatedeira.setVoltagem(Double.parseDouble(volt.getText())))) {
+                        JOptionPane.showMessageDialog(null, "Valor de voltagem invalida, tente novamente", "Operação cancelada", 2);
+                    }
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
             }
-        }else if(level == 2){ // Loja
+            
+        } else {
             JTextField marca = new JTextField();
             JTextField preco = new JTextField();
             JTextField volt = new JTextField();
-            JTextField qntHelices = new JTextField();
+            JTextField qnt = new JTextField();
+            JTextField cap = new JTextField();
             Object[] message = {
                 "Marca:", marca,
                 "Preço:", preco,
                 "Voltagem:", volt,
-                "Quantidade de hélices:", qntHelices
+                "Quantidade(L):",qnt,
+                "Capacidade(L/s):",cap
             };
 
             int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - BATEDEIRA", JOptionPane.OK_CANCEL_OPTION);
             if (option == JOptionPane.OK_OPTION) {
-                novaBatedeira = new Batedeira(Double.parseDouble(preco.getText()),Double.parseDouble(volt.getText()),marca.getText());
-            } else {
+                if ((marca.getText().isEmpty() || volt.getText().isEmpty() || qnt.getText().isEmpty() || cap.getText().isEmpty() || preco.getText().isEmpty())) {
+                    JOptionPane.showMessageDialog(null, "Todos os campos obrigatórios devem ser preenchidos.");
+                    return;
+                }else{
+                    novaBatedeira = new Batedeira(Double.parseDouble(preco.getText()),marca.getText());
+                    novaBatedeira.setCapacidade(Double.parseDouble(cap.getText()));
+                    novaBatedeira.setQuantidade(Double.parseDouble(qnt.getText()));
+                    if (!(novaBatedeira.setVoltagem(Double.parseDouble(volt.getText())))) {
+                        JOptionPane.showMessageDialog(null, "Valor de voltagem invalida, tente novamente", "Operação cancelada", 2);
+                        novaBatedeira = null;
+                    }
+                }
+            }else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
             }
         }
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_btnCadastrarMouseClicked
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-
-        try {
+    private void btnDescontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDescontoMouseClicked
+        if (novaBatedeira == null) {
+            JOptionPane.showMessageDialog(null, "Você deve cadastrar uma batedeira primeiro.", "Operação cancelada", 2);
+        }
+        else if(novaBatedeira.getPreco() == 0){
+                JOptionPane.showMessageDialog(null, "Esse produto é de uso interno e não possui valor de venda.");
+        }else{
             String mes = JOptionPane.showInputDialog(null, "Insira o mês corrente", "CALCULANDO DESCONTO", 3);
             double desconto = novaBatedeira.calculoDesconto(mes);
-            if (desconto != 1) {
+            if (desconto != 1 && novaBatedeira.getPreco() !=0) {
                 JOptionPane.showMessageDialog(null, "O desconto a ser aplicado no valor desse produto é "+desconto+" totalizando um preço de R$ "+(novaBatedeira.getPreco()-novaBatedeira.calculoDesconto(mes)));
-            }else{
+            }
+            else{
                 JOptionPane.showMessageDialog(null, "Sem promoções neste produto no mês corrente", "Desconto calculado.", 2);
             }
-
-        } catch (Exception ex) {
-            if (novaBatedeira.getMarca().equals("")) {
-                JOptionPane.showMessageDialog(null, "Você deve cadastrar uma batedeira primeiro.", "Operação cancelada", 2);
-                throw ex;
-            }
         }
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_btnDescontoMouseClicked
+
+    private void btnCalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalcMouseClicked
+        try {
+            JOptionPane.showMessageDialog(null, "A média de litros batidos por segundo desse batedeira é " + novaBatedeira.calculaLitrosPorSegundo());
+        } catch (Exception ex) {
+                if (novaBatedeira == null) {
+                    JOptionPane.showMessageDialog(null, "Você deve cadastrar uma batedeira primeiro.", "Operação cancelada", 2);
+                }
+        }
+    }//GEN-LAST:event_btnCalcMouseClicked
+
+    private void lblCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastrarMouseClicked
+        btnCadastrarMouseClicked(evt);
+    }//GEN-LAST:event_lblCadastrarMouseClicked
+
+    private void lblDescontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDescontoMouseClicked
+        btnDescontoMouseClicked(evt);
+    }//GEN-LAST:event_lblDescontoMouseClicked
+
+    private void lblCalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCalcMouseClicked
+        btnCalcMouseClicked(evt);
+    }//GEN-LAST:event_lblCalcMouseClicked
 
     /**
      * @param args the command line arguments
@@ -330,16 +424,18 @@ public class FrmBatedeira extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnCadastrar;
+    private javax.swing.JLabel btnCalc;
+    private javax.swing.JLabel btnDesconto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblCadastrar;
+    private javax.swing.JLabel lblCalc;
+    private javax.swing.JLabel lblDesconto;
     // End of variables declaration//GEN-END:variables
 }
