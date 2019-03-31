@@ -7,6 +7,7 @@ import org.fieb.FerroDePassar;
  */
 public class FrmFerro extends javax.swing.JFrame {
     FerroDePassar novoFerro = null;
+    FerroDePassar ferroCadastrado = null;
     int xMouse;
     int yMouse;
     int level;
@@ -270,10 +271,13 @@ public class FrmFerro extends javax.swing.JFrame {
                     }
                     if (!(novoFerro.setVoltagem(Double.parseDouble(volt.getText())))) {
                         JOptionPane.showMessageDialog(null, "Valor de voltagem invalida, tente novamente", "Operação cancelada", 2);
+                        return;
                     }
+                    ferroCadastrado = novoFerro;
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
+                return;
             }
             
         } else {
@@ -295,30 +299,36 @@ public class FrmFerro extends javax.swing.JFrame {
                     novoFerro = new FerroDePassar(Double.parseDouble(preco.getText()),marca.getText());
                     if (!(novoFerro.setVoltagem(Double.parseDouble(volt.getText())))) {
                         JOptionPane.showMessageDialog(null, "Valor de voltagem invalida, tente novamente", "Operação cancelada", 2);
-                        novoFerro = null;
+                        return;
                     }
+                    ferroCadastrado = novoFerro;
                 }
             }else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
+                return;
             }
         }
     }//GEN-LAST:event_btnCadastrarMouseClicked
 
     private void btnDescontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDescontoMouseClicked
-        if (novoFerro == null) {
-            JOptionPane.showMessageDialog(null, "Você deve cadastrar um ferro de passar roupa primeiro.", "Operação cancelada", 2);
-        }
-        else if(novoFerro.getPreco() == 0){
-                JOptionPane.showMessageDialog(null, "Esse produto é de uso interno e não possui valor de venda.");
-        }else{
-            String mes = JOptionPane.showInputDialog(null, "Insira o mês corrente", "CALCULANDO DESCONTO", 3);
-            double desconto = novoFerro.calculoDesconto(mes);
-            if (desconto != 1 && novoFerro.getPreco() !=0) {
-                JOptionPane.showMessageDialog(null, "O desconto a ser aplicado no valor desse produto é "+desconto+" totalizando um preço de R$ "+(novoFerro.getPreco()-novoFerro.calculoDesconto(mes)));
+        try {
+            if (ferroCadastrado == null) {
+                JOptionPane.showMessageDialog(null, "Você deve cadastrar um ferro de passar roupa primeiro.", "Operação cancelada", 2);
             }
-            else{
-                JOptionPane.showMessageDialog(null, "Sem promoções neste produto no mês corrente", "Desconto calculado.", 2);
+            else if(ferroCadastrado.getPreco() == 0){
+                    JOptionPane.showMessageDialog(null, "Esse produto é de uso interno e não possui valor de venda.");
+            }else{
+                String mes = JOptionPane.showInputDialog(null, "Insira o mês corrente", "CALCULANDO DESCONTO", 3);
+                double desconto = ferroCadastrado.calculoDesconto(mes);
+                if (desconto != 1 && ferroCadastrado.getPreco() !=0) {
+                    JOptionPane.showMessageDialog(null, "O desconto a ser aplicado no valor desse produto é "+desconto+" totalizando um preço de R$ "+(ferroCadastrado.getPreco()-ferroCadastrado.calculoDesconto(mes)));
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Sem promoções neste produto no mês corrente", "Desconto calculado.", 2);
+                }
             }
+        } catch (Exception e) {
+            
         }
     }//GEN-LAST:event_btnDescontoMouseClicked
 

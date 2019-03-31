@@ -7,6 +7,7 @@ import org.fieb.Batedeira;
  */
 public class FrmBatedeira extends javax.swing.JFrame {
     Batedeira novaBatedeira = null;
+    Batedeira batedeiraCadastrada = null;
     int xMouse;
     int yMouse;
     int level;
@@ -286,32 +287,38 @@ public class FrmBatedeira extends javax.swing.JFrame {
             JTextField qnt = new JTextField();
             JTextField cap = new JTextField();
             JTextField preco = new JTextField();
+            JTextField qntH = new JTextField();
             Object[] message = {
                 "Marca:", marca,
                 "Voltagem:", volt,
                 "Quantidade(L):",qnt,
                 "Capacidade(L/s):",cap,
-                "Preço(Opcional):",preco
+                "Preço(Opcional):",preco,
+                "Qnt de Hélices:",qntH
             };
 
             int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - BATEDEIRA", JOptionPane.OK_CANCEL_OPTION);
             if (option == JOptionPane.OK_OPTION) {
-                if ((marca.getText().isEmpty() || volt.getText().isEmpty() || qnt.getText().isEmpty() || cap.getText().isEmpty())) {
+                if ((marca.getText().isEmpty() || volt.getText().isEmpty() || qnt.getText().isEmpty() || cap.getText().isEmpty() || qntH.getText().isEmpty())) {
                     JOptionPane.showMessageDialog(null, "Todos os campos obrigatórios devem ser preenchidos.");
                     return;
                 }else{
                     novaBatedeira = new Batedeira(marca.getText());
                     novaBatedeira.setCapacidade(Double.parseDouble(cap.getText()));
                     novaBatedeira.setQuantidade(Double.parseDouble(qnt.getText()));
+                    novaBatedeira.setQuantidadeHelices(Integer.parseInt(qntH.getText()));
                     if (!(preco.getText().isEmpty())) {
                         novaBatedeira.setPreco(Double.parseDouble(preco.getText()));
                     }
                     if (!(novaBatedeira.setVoltagem(Double.parseDouble(volt.getText())))) {
                         JOptionPane.showMessageDialog(null, "Valor de voltagem invalida, tente novamente", "Operação cancelada", 2);
+                        return;
                     }
+                    batedeiraCadastrada = novaBatedeira;
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
+                return;
             }
             
         } else {
@@ -320,57 +327,66 @@ public class FrmBatedeira extends javax.swing.JFrame {
             JTextField volt = new JTextField();
             JTextField qnt = new JTextField();
             JTextField cap = new JTextField();
+            JTextField qntH = new JTextField();
             Object[] message = {
                 "Marca:", marca,
                 "Preço:", preco,
                 "Voltagem:", volt,
                 "Quantidade(L):",qnt,
-                "Capacidade(L/s):",cap
+                "Capacidade(L/s):",cap,
+                "Qnt de Hélices:",qntH
             };
 
             int option = JOptionPane.showConfirmDialog(null, message, "CADASTRO - BATEDEIRA", JOptionPane.OK_CANCEL_OPTION);
             if (option == JOptionPane.OK_OPTION) {
-                if ((marca.getText().isEmpty() || volt.getText().isEmpty() || qnt.getText().isEmpty() || cap.getText().isEmpty() || preco.getText().isEmpty())) {
+                if ((marca.getText().isEmpty() || volt.getText().isEmpty() || qnt.getText().isEmpty() || cap.getText().isEmpty() || preco.getText().isEmpty() || qntH.getText().isEmpty())) {
                     JOptionPane.showMessageDialog(null, "Todos os campos obrigatórios devem ser preenchidos.");
                     return;
                 }else{
                     novaBatedeira = new Batedeira(Double.parseDouble(preco.getText()),marca.getText());
                     novaBatedeira.setCapacidade(Double.parseDouble(cap.getText()));
                     novaBatedeira.setQuantidade(Double.parseDouble(qnt.getText()));
+                    novaBatedeira.setQuantidadeHelices(Integer.parseInt(qntH.getText()));
                     if (!(novaBatedeira.setVoltagem(Double.parseDouble(volt.getText())))) {
                         JOptionPane.showMessageDialog(null, "Valor de voltagem invalida, tente novamente", "Operação cancelada", 2);
-                        novaBatedeira = null;
+                        return;
                     }
+                    batedeiraCadastrada = novaBatedeira;
                 }
             }else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
+                return;
             }
         }
     }//GEN-LAST:event_btnCadastrarMouseClicked
 
     private void btnDescontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDescontoMouseClicked
-        if (novaBatedeira == null) {
-            JOptionPane.showMessageDialog(null, "Você deve cadastrar uma batedeira primeiro.", "Operação cancelada", 2);
-        }
-        else if(novaBatedeira.getPreco() == 0){
-                JOptionPane.showMessageDialog(null, "Esse produto é de uso interno e não possui valor de venda.");
-        }else{
-            String mes = JOptionPane.showInputDialog(null, "Insira o mês corrente", "CALCULANDO DESCONTO", 3);
-            double desconto = novaBatedeira.calculoDesconto(mes);
-            if (desconto != 1 && novaBatedeira.getPreco() !=0) {
-                JOptionPane.showMessageDialog(null, "O desconto a ser aplicado no valor desse produto é "+desconto+" totalizando um preço de R$ "+(novaBatedeira.getPreco()-novaBatedeira.calculoDesconto(mes)));
+        try {
+            if (batedeiraCadastrada == null) {
+                JOptionPane.showMessageDialog(null, "Você deve cadastrar uma batedeira primeiro.", "Operação cancelada", 2);
             }
-            else{
-                JOptionPane.showMessageDialog(null, "Sem promoções neste produto no mês corrente", "Desconto calculado.", 2);
+            else if(batedeiraCadastrada.getPreco() == 0){
+                    JOptionPane.showMessageDialog(null, "Esse produto é de uso interno e não possui valor de venda.");
+            }else{
+                String mes = JOptionPane.showInputDialog(null, "Insira o mês corrente", "CALCULANDO DESCONTO", 3);
+                double desconto = batedeiraCadastrada.calculoDesconto(mes);
+                if (desconto != 1 && batedeiraCadastrada.getPreco() !=0) {
+                    JOptionPane.showMessageDialog(null, "O desconto a ser aplicado no valor desse produto é "+desconto+" totalizando um preço de R$ "+(batedeiraCadastrada.getPreco()-batedeiraCadastrada.calculoDesconto(mes)));
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Sem promoções neste produto no mês corrente", "Desconto calculado.", 2);
+                }
             }
+        } catch (Exception e) {
+            
         }
     }//GEN-LAST:event_btnDescontoMouseClicked
 
     private void btnCalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalcMouseClicked
         try {
-            JOptionPane.showMessageDialog(null, "A média de litros batidos por segundo desse batedeira é " + novaBatedeira.calculaLitrosPorSegundo());
+            JOptionPane.showMessageDialog(null, "A média de litros batidos por segundo desse batedeira é " + batedeiraCadastrada.calculaLitrosPorSegundo());
         } catch (Exception ex) {
-                if (novaBatedeira == null) {
+                if (batedeiraCadastrada == null) {
                     JOptionPane.showMessageDialog(null, "Você deve cadastrar uma batedeira primeiro.", "Operação cancelada", 2);
                 }
         }

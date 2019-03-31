@@ -3,12 +3,14 @@ import javax.swing.*;
 import org.fieb.Batedeira;
 import org.fieb.FerroDePassar;
 import org.fieb.Liquidificador;
+import org.fieb.Tampa;
 /**
  *
  * @author Eduardo C.
  */
 public class FrmLiquidificador extends javax.swing.JFrame {
     Liquidificador novoLiquidificador = null;
+    Liquidificador liquidificadorCadastrado;
     int xMouse;
     int yMouse;
     int level;
@@ -291,15 +293,33 @@ public class FrmLiquidificador extends javax.swing.JFrame {
                     novoLiquidificador = new Liquidificador(marca.getText());
                     novoLiquidificador.setCapacidade(Double.parseDouble(cap.getText()));
                     novoLiquidificador.setQuantidade(Double.parseDouble(qnt.getText()));
+                    try {
+                        Tampa tampa;
+                        do{
+                            tampa = new Tampa();                            
+                            tampa.setCor(JOptionPane.showInputDialog("Insira a cor da tampa."));
+                            tampa.setDescricao(JOptionPane.showInputDialog("Insira a descrição da tampa."));
+                            novoLiquidificador.setTampa(tampa);
+                            if (tampa.getCor().isEmpty() || tampa.getDescricao().isEmpty()) {
+                                JOptionPane.showMessageDialog(null, "Os campos são obrigatórios!");
+                            }
+                        }while (tampa.getCor().isEmpty() || tampa.getDescricao().isEmpty());
                     if (!(preco.getText().isEmpty())) {
                         novoLiquidificador.setPreco(Double.parseDouble(preco.getText()));
                     }
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
+                        return;
+                    }
                     if (!(novoLiquidificador.setVoltagem(Double.parseDouble(volt.getText())))) {
                         JOptionPane.showMessageDialog(null, "Valor de voltagem invalida, tente novamente", "Operação cancelada", 2);
+                        return;
                     }
+                        liquidificadorCadastrado = novoLiquidificador;
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
+                return;
             }
             
         } else {
@@ -327,39 +347,45 @@ public class FrmLiquidificador extends javax.swing.JFrame {
                     novoLiquidificador.setQuantidade(Double.parseDouble(qnt.getText()));
                     if (!(novoLiquidificador.setVoltagem(Double.parseDouble(volt.getText())))) {
                         JOptionPane.showMessageDialog(null, "Valor de voltagem invalida, tente novamente", "Operação cancelada", 2);
-                        novoLiquidificador = null;
+                        return;
                     }
                 }
+                liquidificadorCadastrado = novoLiquidificador;
             }else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
+                return;
             }
         }
         
     }//GEN-LAST:event_btnCadastrarMouseClicked
 
     private void btnDescontoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDescontoMouseClicked
-        if (novoLiquidificador == null) {
-            JOptionPane.showMessageDialog(null, "Você deve cadastrar um liquidificador primeiro.", "Operação cancelada", 2);
-        }
-        else if(novoLiquidificador.getPreco() == 0){
-                JOptionPane.showMessageDialog(null, "Esse produto é de uso interno e não possui valor de venda.");
-        }else{
-            String mes = JOptionPane.showInputDialog(null, "Insira o mês corrente", "CALCULANDO DESCONTO", 3);
-            double desconto = novoLiquidificador.calculoDesconto(mes);
-            if (desconto != 1 && novoLiquidificador.getPreco() !=0) {
-                JOptionPane.showMessageDialog(null, "O desconto a ser aplicado no valor desse produto é "+desconto+" totalizando um preço de R$ "+(novoLiquidificador.getPreco()-novoLiquidificador.calculoDesconto(mes)));
+        try {
+            if (liquidificadorCadastrado == null) {
+                JOptionPane.showMessageDialog(null, "Você deve cadastrar um liquidificador primeiro.", "Operação cancelada", 2);
             }
-            else{
-                JOptionPane.showMessageDialog(null, "Sem promoções neste produto no mês corrente", "Desconto calculado.", 2);
+            else if(liquidificadorCadastrado.getPreco() == 0){
+                    JOptionPane.showMessageDialog(null, "Esse produto é de uso interno e não possui valor de venda.");
+            }else{
+                String mes = JOptionPane.showInputDialog(null, "Insira o mês corrente", "CALCULANDO DESCONTO", 3);
+                double desconto = liquidificadorCadastrado.calculoDesconto(mes);
+                if (desconto != 1 && liquidificadorCadastrado.getPreco() !=0) {
+                    JOptionPane.showMessageDialog(null, "O desconto a ser aplicado no valor desse produto é "+desconto+" totalizando um preço de R$ "+(liquidificadorCadastrado.getPreco()-liquidificadorCadastrado.calculoDesconto(mes)));
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Sem promoções neste produto no mês corrente", "Desconto calculado.", 2);
+                }
             }
+        } catch (Exception e) {
+            
         }
     }//GEN-LAST:event_btnDescontoMouseClicked
 
     private void btnCalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCalcMouseClicked
         try {
-            JOptionPane.showMessageDialog(null, "A média de litros batidos por segundo desse liquidificador é " + novoLiquidificador.calculaLitrosPorSegundo());
+            JOptionPane.showMessageDialog(null, "A média de litros batidos por segundo desse liquidificador é " + liquidificadorCadastrado.calculaLitrosPorSegundo());
         } catch (Exception ex) {
-                if (novoLiquidificador == null) {
+                if (liquidificadorCadastrado == null) {
                     JOptionPane.showMessageDialog(null, "Você deve cadastrar um liquidificador primeiro.", "Operação cancelada", 2);
                 }
         }
