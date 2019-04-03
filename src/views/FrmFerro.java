@@ -274,6 +274,7 @@ public class FrmFerro extends javax.swing.JFrame {
                         return;
                     }
                     ferroCadastrado = novoFerro;
+                    JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
@@ -302,6 +303,7 @@ public class FrmFerro extends javax.swing.JFrame {
                         return;
                     }
                     ferroCadastrado = novoFerro;
+                    JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
                 }
             }else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);

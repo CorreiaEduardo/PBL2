@@ -316,6 +316,7 @@ public class FrmLiquidificador extends javax.swing.JFrame {
                         return;
                     }
                         liquidificadorCadastrado = novoLiquidificador;
+                        JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
@@ -345,12 +346,31 @@ public class FrmLiquidificador extends javax.swing.JFrame {
                     novoLiquidificador = new Liquidificador(Double.parseDouble(preco.getText()),marca.getText());
                     novoLiquidificador.setCapacidade(Double.parseDouble(cap.getText()));
                     novoLiquidificador.setQuantidade(Double.parseDouble(qnt.getText()));
+                    try {
+                        Tampa tampa;
+                        do{
+                            tampa = new Tampa();                            
+                            tampa.setCor(JOptionPane.showInputDialog("Insira a cor da tampa."));
+                            tampa.setDescricao(JOptionPane.showInputDialog("Insira a descrição da tampa."));
+                            novoLiquidificador.setTampa(tampa);
+                            if (tampa.getCor().isEmpty() || tampa.getDescricao().isEmpty()) {
+                                JOptionPane.showMessageDialog(null, "Os campos são obrigatórios!");
+                            }
+                        }while (tampa.getCor().isEmpty() || tampa.getDescricao().isEmpty());
+                    if (!(preco.getText().isEmpty())) {
+                        novoLiquidificador.setPreco(Double.parseDouble(preco.getText()));
+                    }
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
+                        return;
+                    }
                     if (!(novoLiquidificador.setVoltagem(Double.parseDouble(volt.getText())))) {
                         JOptionPane.showMessageDialog(null, "Valor de voltagem invalida, tente novamente", "Operação cancelada", 2);
                         return;
                     }
-                }
                 liquidificadorCadastrado = novoLiquidificador;
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
+                }
             }else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
                 return;

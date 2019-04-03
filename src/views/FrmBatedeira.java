@@ -315,6 +315,7 @@ public class FrmBatedeira extends javax.swing.JFrame {
                         return;
                     }
                     batedeiraCadastrada = novaBatedeira;
+                    JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
@@ -352,6 +353,7 @@ public class FrmBatedeira extends javax.swing.JFrame {
                         return;
                     }
                     batedeiraCadastrada = novaBatedeira;
+                    JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
                 }
             }else {
                 JOptionPane.showMessageDialog(null, "O processo de cadastro foi cancelado com sucesso", "Operação cancelada", 2);
